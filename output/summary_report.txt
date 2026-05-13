@@ -1,0 +1,15 @@
+Total messages: 6
+Total categories: 2
+Total channels: 3
+Total users: 6
+Categories:  grant_search: 5
+  report_request: 1
+Channels:  telegram: 3
+  email: 1
+  whatsapp: 2
+Users:  user_01: 1
+  user_02: 1
+  user_03: 1
+  user_04: 1
+  user_09: 1
+  user_10: 1
