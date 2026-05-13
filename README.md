@@ -1,23 +1,29 @@
 ## How to run
 
 1. Clone the repository
+
 git clone https://github.com/pageunavailable05/messageprocessor
 cd messageprocessor
 
-2. Create virtual environment
+3. Create virtual environment
+   
 python3 -m venv venv
 source venv/bin/activate
 
-3. Install dependencies
+5. Install dependencies
+   
 pip install -r requirements.txt
 
-4. Add your data
+7. Add your data
+   
 Place your messages.json file into the "data" folder
 
-5. Run the script
+9. Run the script
+    
 python src/main.py
 
-6. Check results in the "output" folder
+11. Check results in the "output" folder
+    
 classified_messages.csv — all messages with category
 summary_report.txt — statistics report
 
