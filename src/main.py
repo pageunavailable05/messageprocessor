@@ -1,20 +1,16 @@
 import json
 import csv
 import logging
-from datetime import datetime
-from dotenv import load_dotenv
-
-load_dotenv()
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 logger = logging.getLogger(__name__)
-
 
 
 def loading_messages(filepath):
     with open (filepath, 'r', encoding="utf-8") as file:
         messages = json.load(file)
     return messages
+
 
 def cleaned_messages(messages):
     seen = set()
@@ -58,8 +54,6 @@ def classify_messages(text):
         return 'general_question'
     return 'unknown'
 
-def save_in_database():
-    pass
 
 def save_csv(messages, filepath):
     with open(filepath, 'w', newline='', encoding='utf-8') as file:
@@ -105,6 +99,7 @@ def save_report(messages, filepath):
 
     logger.info(f"Saved report to {filepath}")
 
+
 def main():
     messages = loading_messages("data/messages.json")
     logger.info(f"Loaded {len(messages)} messages")
@@ -114,6 +109,7 @@ def main():
         logger.info(f"user_id={message['user_id']} → {message['category']}")
     save_csv(cleaned, "output/classified_messages.csv")
     save_report(cleaned, "output/summary_report.txt")
+    
     
 if __name__ == "__main__":
     main()
